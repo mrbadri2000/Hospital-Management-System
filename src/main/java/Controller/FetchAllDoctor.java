@@ -18,7 +18,7 @@ public class FetchAllDoctor extends HttpServlet {
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 	MyDao dao=new MyDao();
-	List<Doctor> list=dao.FetchAlldoctor();
+	List<Doctor> list=dao.fetchAllDoctor();
 	
 	if (list.isEmpty()) {
 		resp.getWriter().print("<h1> Nothing is Here </h1>");

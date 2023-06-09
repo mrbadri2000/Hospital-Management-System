@@ -17,7 +17,7 @@ public class FetchAllStaff extends HttpServlet{
  @Override
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		MyDao dao=new MyDao();
-		List<Staff> list=dao.FetchAllStaff();
+		List<Staff> list=dao.fetchAllStaff();
 		
 		if (list.isEmpty()) {
 			resp.getWriter().print("<h1> Nothing is Here </h1>");

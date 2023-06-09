@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import Dao.MyDao;
 import Dto.Staff;
 
+@WebServlet(urlPatterns = ("/changestaffstatus"))
 public class Changestaffstatus extends HttpServlet
 {
 	@Override
@@ -27,7 +29,7 @@ public class Changestaffstatus extends HttpServlet
 		dao.updateStaff(staff);
 
 		resp.getWriter().print("<h1 style='color:green'>Status Updated</h1>");
-		req.setAttribute("list", dao.FetchAllStaff());
+		req.setAttribute("list", dao.fetchAllStaff());
 		req.getRequestDispatcher("ApproveStaff.jsp").include(req, resp);
 
 		}
