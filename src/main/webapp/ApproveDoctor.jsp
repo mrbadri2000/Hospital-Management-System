@@ -1,15 +1,14 @@
-<%@page import="java.util.List"%>
 <%@page import="Dto.Doctor"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Approve doctor</title>
 </head>
 <body>
-
 <% List<Doctor> list=(List<Doctor>)request.getAttribute("list"); %>
 <table border="1">
 <tr>
@@ -28,11 +27,12 @@
 <th><%=doctor.getAge()%></th>
 <th><%=doctor.isStatus()%></th>
 
-<th><a href="changeDoctorstatus?id=<%=doctor.getId()%>"><button>Change Status</button></a></th>
-
-
+<th><a href="admindoctorstatus?id=<%=doctor.getId()%>"><button>Change Status</button></a></th>
 
 </tr>
 <%} %>
+</table>
+<br>
+<a href="AdminHome.html"><button>Back</button></a>
 </body>
 </html>

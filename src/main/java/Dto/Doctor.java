@@ -28,8 +28,8 @@ public class Doctor {
 	private boolean status;
 	private String qualification;
 	private String specialization;
-	private String Avaibility;
+	private boolean available;
 
-   @OneToMany
-   List<Appointment> doctorappointment;
+	@OneToMany
+	List<Appointment> appointments;
 }
